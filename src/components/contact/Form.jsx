@@ -148,7 +148,10 @@ function Form() {
     } else {
       axios
         .post("https://ahmedmohmd-website.herokuapp.com", formData, {
-          withCredentials: true,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+          },
         })
         .then(() => {
           swal("Success", "Thanks for Contacting", "success").then(
