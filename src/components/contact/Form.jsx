@@ -147,7 +147,7 @@ function Form() {
       setErrors(result);
     } else {
       axios
-        .post("https://ahmedmohmd-website.herokuapp.com/", formData, {
+        .post("https://ahmedmohmd-website.herokuapp.com", formData, {
           headers: {
             "Access-Control-Allow-Origin": "*",
             "Content-Type": "application/json",
