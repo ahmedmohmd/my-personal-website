@@ -147,7 +147,9 @@ function Form() {
       setErrors(result);
     } else {
       axios
-        .post("https://ahmedmohmd-website.herokuapp.com", formData)
+        .post("https://ahmedmohmd-website.herokuapp.com", formData, {
+          withCredentials: true,
+        })
         .then(() => {
           swal("Success", "Thanks for Contacting", "success").then(
             () => (window.location = "/")
