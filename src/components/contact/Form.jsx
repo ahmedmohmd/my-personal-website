@@ -154,12 +154,8 @@ function Form() {
           );
         })
         .catch((error) => {
-          console.log(error);
-          swal(
-            "Error!",
-            "Sorry, There is an Error, PLease Try again.",
-            "error"
-          );
+          // console.log(error);
+          swal("Error!", `${error}`, "error");
         });
 
       setErrors({});
