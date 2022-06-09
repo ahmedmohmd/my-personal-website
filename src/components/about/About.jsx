@@ -78,7 +78,7 @@ function About() {
                 />
               </div>
               <div className="flex flex-col items-center justify-center text-center">
-                <h2 className="mt-4 text-xl font-medium text-gray-800 title-font dark:text-white">
+                <h2 className="mt-4 text-xl font-medium font-semibold text-blue-500 title-font dark:text-white">
                   Ahmed Mohamed
                 </h2>
                 <div className="w-12 h-1 mt-2 mb-4 bg-blue-500 rounded"></div>
@@ -112,7 +112,7 @@ function About() {
                     </svg>
                   </div>
                   <div className="flex flex-col flex-grow gap-2 mt-6 sm:pl-6 sm:mt-0">
-                    <h2 className="mb-1 text-xl font-medium text-gray-800 title-font dark:text-white">
+                    <h2 className="mb-1 text-xl font-medium font-semibold text-blue-500 title-font dark:text-white">
                       What I do?
                     </h2>
                     <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
@@ -133,7 +133,7 @@ function About() {
                             clipRule="evenodd"
                           />
                         </svg>
-                        <h3 className="text-gray-800 dark:text-white">
+                        <h3 className="font-semibold text-blue-500 dark:text-white">
                           Front End
                         </h3>
                       </div>
@@ -150,7 +150,7 @@ function About() {
                             clipRule="evenodd"
                           />
                         </svg>
-                        <h3 className="text-gray-800 dark:text-white">
+                        <h3 className="font-semibold text-blue-500 dark:text-white">
                           Back End
                         </h3>
                       </div>
@@ -172,7 +172,7 @@ function About() {
                     />
                   </div>
                   <div className="flex flex-col flex-grow gap-2 mt-6 sm:pl-6 sm:mt-0">
-                    <h2 className="mb-1 text-xl font-medium text-gray-800 title-font dark:text-white">
+                    <h2 className="mb-1 text-xl font-medium font-semibold text-blue-500 title-font dark:text-white">
                       Skills
                     </h2>
                     <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
@@ -207,7 +207,7 @@ function About() {
                     />
                   </div>
                   <div className="flex-grow mt-6 sm:pl-6 sm:mt-0">
-                    <h2 className="mb-1 text-xl font-medium text-gray-800 title-font dark:text-white">
+                    <h2 className="mb-1 text-xl font-medium font-semibold text-blue-500 title-font dark:text-white">
                       Education
                     </h2>
                     <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
@@ -230,7 +230,7 @@ function About() {
                     />
                   </div>
                   <div className="flex-grow mt-6 sm:pl-6 sm:mt-0">
-                    <h2 className="mb-1 text-xl font-medium text-gray-800 title-font dark:text-white">
+                    <h2 className="mb-1 text-xl font-medium font-semibold text-blue-500 title-font dark:text-white">
                       Hoppies
                     </h2>
                     <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
@@ -254,7 +254,7 @@ function About() {
                     />
                   </div>
                   <div className="flex-grow mt-6 sm:pl-6 sm:mt-0">
-                    <h2 className="mb-1 text-xl font-medium text-gray-800 title-font dark:text-white">
+                    <h2 className="mb-1 text-xl font-medium font-semibold text-blue-500 title-font dark:text-white">
                       Experience
                     </h2>
                     <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
