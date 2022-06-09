@@ -55,6 +55,7 @@ function Form() {
         onChange={(event) =>
           setFormData({ ...formData, name: event.target.value })
         }
+        value={formData.name}
         onFocus={() => setNamePlaceholder("")}
         onBlur={() => setNamePlaceholder("Your Name...")}
       />
@@ -66,6 +67,7 @@ function Form() {
         onChange={(event) =>
           setFormData({ ...formData, email: event.target.value })
         }
+        value={formData.email}
         onFocus={() => setEmailPlaceholder("")}
         onBlur={() => setEmailPlaceholder("Your Email...")}
       />
@@ -78,6 +80,7 @@ function Form() {
         onChange={(event) =>
           setFormData({ ...formData, message: event.target.value })
         }
+        value={formData.message}
         onFocus={() => setMessagePlaceholder("")}
         onBlur={() => setMessagePlaceholder("Your Message...")}
       ></textarea>
@@ -130,7 +133,7 @@ function Form() {
       startTransition(async () => {
         try {
           await axios.post(config.apiEndPoint, formData);
-          await toast.success("Thanks for Your Message", {
+          toast.success("Thanks for Your Message", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -141,7 +144,7 @@ function Form() {
             theme: "colored",
           });
         } catch (error) {
-          toast.error("Sorry, an Unexpected Error Occured!", {
+          await toast.error("Sorry, an Unexpected Error Occured!", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -154,7 +157,6 @@ function Form() {
         }
       });
     }
-    setFormData({});
   }
 }
 
