@@ -4,7 +4,7 @@ function ProgressBar({ skillName, progress, width }) {
     <div className="relative w-full pt-1">
       <div className="flex items-center justify-between mb-2">
         <div>
-          <span className="inline-block px-2 py-1 text-xs font-semibold text-green-600 uppercase bg-green-200 rounded-full dark:text-white dark:bg-green-500/50">
+          <span className="inline-block px-2 py-1 text-xs font-semibold uppercase rounded-full text-cyan-600 bg-cyan-200 dark:text-white dark:bg-cyan-500/50">
             {skillName}
           </span>
         </div>
@@ -18,7 +18,7 @@ function ProgressBar({ skillName, progress, width }) {
         <div
           className={
             width +
-            " shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500"
+            " shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-br from-blue-600 to-green-400"
           }
         ></div>
       </div>
