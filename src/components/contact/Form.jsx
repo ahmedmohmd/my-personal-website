@@ -137,7 +137,7 @@ function Form() {
       startTransition(async () => {
         try {
           await axios.post(config.apiEndPoint, formData);
-          toast.success("Thanks for Your Message", {
+          await toast.success("Thanks for Your Message", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
