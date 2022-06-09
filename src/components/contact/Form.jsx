@@ -137,7 +137,7 @@ function Form() {
       startTransition(async () => {
         try {
           await axios.post(config.apiEndPoint, formData);
-          await toast.success("Thanks for Your Message", {
+          toast.success("Thanks for Your Message", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -146,6 +146,11 @@ function Form() {
             draggable: true,
             progress: undefined,
             theme: "colored",
+          });
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
           });
         } catch (error) {
           await toast.error("Sorry, an Unexpected Error Occured!", {
@@ -161,11 +166,6 @@ function Form() {
         }
       });
     }
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
   }
 }
 
