@@ -18,7 +18,7 @@ function ProgressBar({ skillName, progress, width }) {
         <div
           className={
             width +
-            " shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-br from-blue-500 to-purple-600"
+            " shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gradient-to-l from-blue-500 to-purple-600"
           }
         ></div>
       </div>
