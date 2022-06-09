@@ -17,6 +17,8 @@ const AppStyle = styled.div`
     animation: scaling 1.5s linear infinite alternate;
     transition: 0.3s;
     right: -75px;
+    outline: none;
+    border: none;
   }
 
   @keyframes scaling {
