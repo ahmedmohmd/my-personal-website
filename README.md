@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# My Personal Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the **Frontend Source Code** for my own Offecial Website.
 
-## Available Scripts
 
-In the project directory, you can run:
+-----
 
-### `npm start`
+# Discreption
+The Wesbite have nice design and responsive design.
+ 
+-----
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# App Features
+  - Reponsive
+  - Nice Design with Tailwind Framework
+  - Speed & Good Performance
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-----
 
-### `npm test`
+# Languages & Technologies
+### Lauages That used in this Web App:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="drawing" width="48" height="48"/></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS?retiredLocale=ar"><img src="https://img.icons8.com/color/48/000000/css3.png" alt="drawing" width="48" height="48"/></a>
+  <a href="https://www.javascript.com/"><img src="https://img.icons8.com/color/48/000000/javascript--v2.png" width="48" height="48"/></a>
+</div>
 
-### `npm run build`
+### Technolohies that used in this App:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+  <a href="https://reactjs.org/"><img src="https://cdn-icons-png.flaticon.com/512/3334/3334886.png" alt="drawing" width="48" height="48"/></a>
+  <a href="https://getbootstrap.com/"><img src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.79614a5f61617ba49a0891494521226b.svg" width="48" height="48"/></a>
+  <a href="https://sass-lang.com/"><img src="https://static-00.iconduck.com/assets.00/sass-icon-512x512-wrsgqu3t.png" width="48" height="48"/></a>
+</div>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Other Technolohies & Libs:
+  - [**__react-router__**](https://reactrouter.com/)
+  - [**__axios__**](https://axios-http.com/)
+  - [**__react-bootstrap__**](https://react-bootstrap.github.io/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-----
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Web App Screenshot
+![Markdown Blog App Screenshot](https://github.com/ahmedmohmd/markdown-blog/blob/main/app-screenshot.gif?raw=true)
