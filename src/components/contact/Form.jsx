@@ -38,6 +38,10 @@ function Form() {
   const [formData, setFormData] = useState({});
   const [errors, setErrors] = useState({});
   const [isPending, startTransition] = useTransition();
+  const [namePlaceholder, setNamePlaceholder] = useState("Your Name...");
+  const [emailPlaceholder, setEmailPlaceholder] = useState("Your Email...");
+  const [messagePlaceholder, setMessagePlaceholder] =
+    useState("Your Message...");
 
   return (
     <FormStyle
@@ -47,29 +51,35 @@ function Form() {
       <input
         type="text"
         className="w-full min-w-full text-gray-500 border-2 border-gray-300 dark:text-gray-300 form-input rounded-2xl h-14 sm:w-1/3 dark:bg-gray-900 dark:text-white dark:focus:border-blue-800 dark:border-transparent focus:border-blue-300"
-        placeholder="Name..."
+        placeholder={namePlaceholder}
         onChange={(event) =>
           setFormData({ ...formData, name: event.target.value })
         }
+        onFocus={() => setNamePlaceholder("")}
+        onBlur={() => setNamePlaceholder("Your Name...")}
       />
       {errors.name && <DangerAlert text={errors.name} />}
       <input
         type="email"
-        placeholder="Email: example@website.com"
+        placeholder={emailPlaceholder}
         className="w-full min-w-full text-gray-500 border-2 border-gray-300 dark:text-gray-300 form-input rounded-2xl h-14 sm:w-1/3 dark:bg-gray-900 dark:text-white dark:focus:border-blue-800 dark:border-transparent focus:border-blue-300"
         onChange={(event) =>
           setFormData({ ...formData, email: event.target.value })
         }
+        onFocus={() => setEmailPlaceholder("")}
+        onBlur={() => setEmailPlaceholder("Your Email...")}
       />
       {errors.email && <DangerAlert text={errors.email} />}
       <textarea
-        className="w-full min-w-full text-gray-500 border-2 border-gray-300 dark:text-gray-300 form-textarea rounded-2xl sm:w-1/3 dark:bg-gray-900 dark:text-white dark:focus:border-blue-800 dark:border-transparent focus:border-blue-300"
+        className="w-full min-w-full p-4 text-gray-500 border-2 border-gray-300 dark:text-gray-300 form-textarea rounded-2xl sm:w-1/3 dark:bg-gray-900 dark:text-white dark:focus:border-blue-800 dark:border-transparent focus:border-blue-300"
         cols="30"
         rows="10"
-        placeholder="Message..."
+        placeholder={messagePlaceholder}
         onChange={(event) =>
           setFormData({ ...formData, message: event.target.value })
         }
+        onFocus={() => setMessagePlaceholder("")}
+        onBlur={() => setMessagePlaceholder("Your Message...")}
       ></textarea>
       {errors.message && <DangerAlert text={errors.message} />}
       {isPending ? (
@@ -130,6 +140,7 @@ function Form() {
             progress: undefined,
             theme: "colored",
           });
+          setFormData({});
         } catch (error) {
           toast.error("Sorry, an Unexpected Error Occured!", {
             position: "top-right",
