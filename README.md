@@ -30,14 +30,21 @@ The Wesbite have nice design and responsive design.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
   <a href="https://reactjs.org/"><img src="https://cdn-icons-png.flaticon.com/512/3334/3334886.png" alt="drawing" width="48" height="48"/></a>
-  <a href="https://getbootstrap.com/"><img src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.79614a5f61617ba49a0891494521226b.svg" width="48" height="48"/></a>
-  <a href="https://sass-lang.com/"><img src="https://static-00.iconduck.com/assets.00/sass-icon-512x512-wrsgqu3t.png" width="48" height="48"/></a>
+  <a href="https://tailwindcss.com/"><img src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.79614a5f61617ba49a0891494521226b.svg" width="48" height="48"/></a>
+    <a href="https://styled-components.com/"><img src="https://cdn.iconscout.com/icon/premium/png-64-thumb/nail-polish-73-761221.png" width="48" height="48"/></a>
+
 </div>
 
-### Other Technolohies & Libs:
-  - [**__react-router__**](https://reactrouter.com/)
+### Other Libs & Packages:
+  - [**flowbite-react**](https://reactrouter.com/)
   - [**__axios__**](https://axios-http.com/)
-  - [**__react-bootstrap__**](https://react-bootstrap.github.io/)
+  - [**react-icons**](https://react-bootstrap.github.io/)
+  - [**react-router-dom**](https://react-bootstrap.github.io/)
+  - [**sweetalert**](https://react-bootstrap.github.io/)
+  - [**flowbite**](https://react-bootstrap.github.io/)
+  - [**postcss**](https://react-bootstrap.github.io/)
+  - [**tailwindcss**](https://react-bootstrap.github.io/)
+  - [**autoprefixer**](https://react-bootstrap.github.io/)
 
 -----
 
