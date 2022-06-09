@@ -140,7 +140,6 @@ function Form() {
             progress: undefined,
             theme: "colored",
           });
-          setFormData({});
         } catch (error) {
           toast.error("Sorry, an Unexpected Error Occured!", {
             position: "top-right",
@@ -155,6 +154,7 @@ function Form() {
         }
       });
     }
+    setFormData({});
   }
 }
 
