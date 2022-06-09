@@ -4,9 +4,9 @@ import { IoSend } from "react-icons/io5";
 import { useState, useTransition } from "react";
 import { formValidate } from "../../helpers/formValidate";
 import axios from "axios";
-import swal from "sweetalert";
 import Joi from "joi";
 import config from "../../config/config.json";
+import { ToastContainer, toast } from "react-toastify";
 import DangerAlert from "./DangerAlert";
 
 //* Joi Schema
@@ -72,7 +72,6 @@ function Form() {
         }
       ></textarea>
       {errors.message && <DangerAlert text={errors.message} />}
-
       {isPending ? (
         <button
           disabled
@@ -106,6 +105,7 @@ function Form() {
           <span>Send</span>
         </button>
       )}
+      <ToastContainer />
     </FormStyle>
   );
 
@@ -120,11 +120,27 @@ function Form() {
       startTransition(async () => {
         try {
           await axios.post(config.apiEndPoint, formData);
-          swal("Success", "Thanks for Your Message", "success").then(
-            () => (window.location = "/")
-          );
+          toast.success("Thanks for Your Message", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
         } catch (error) {
-          swal("Error!", "Sorry there is an Unexpected Error!", "error");
+          toast.error("Sorry, an Unexpected Error Occured!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
         }
       });
     }
