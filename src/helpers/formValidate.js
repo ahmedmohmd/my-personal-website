@@ -1,6 +1,7 @@
+//* Form Validate Function
+//? This Helper Function for JOI Lib
 const formValidate = (formData, schema) => {
   const errors = {};
-
   const options = { abortEarly: false };
   const { error } = schema.validate(formData, options);
 

@@ -1,5 +1,7 @@
+//* Imports
 import styled from "styled-components";
 
+//* Heading Style
 const HeadingStyle = styled.div`
   h2 {
     font-family: "Luckiest Guy";
@@ -8,21 +10,10 @@ const HeadingStyle = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
-
-    // &::after {
-    //   content: "";
-    //   position: absolute;
-    //   width: 20%;
-    //   height: 7px;
-    //   bottom: -25%;
-    //   left: 50%;
-    //   transform: translateX(-50%);
-    //   background: #e44e52;
-    //   border-radius: 2rem;
-    // }
   }
 `;
 
+//* Heading JSX
 function Heading({ title, description }) {
   return (
     <HeadingStyle className="mx-auto text-center sm:text-center lg:max-w-2xl">

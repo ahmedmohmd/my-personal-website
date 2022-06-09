@@ -1,9 +1,11 @@
+//* Imports
 import styled from "styled-components";
 import { BsGithub } from "react-icons/bs";
 import { AiFillEye } from "react-icons/ai";
 import projects from "../../services/projectService";
 import Heading from "../common/Heading";
 
+//* Portfolio Style
 const PortfolioStyle = styled.div`
   .card {
     position: relative;
@@ -21,7 +23,7 @@ const PortfolioStyle = styled.div`
       top: 0;
       left: 0;
       background: tranparent;
-      transition: 0.5s;
+      transition: 0.3s;
     }
 
     .btns {
@@ -32,7 +34,7 @@ const PortfolioStyle = styled.div`
     .project-title {
       bottom: -75px;
       z-index: 3;
-      transition: 0.5s;
+      transition: 0.3s;
     }
 
     :hover {
@@ -50,6 +52,7 @@ const PortfolioStyle = styled.div`
   }
 `;
 
+//* Portfolio JSX
 function Portfolio() {
   return (
     <PortfolioStyle className="px-4 py-16 mx-auto dark:bg-gray-800 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -58,9 +61,12 @@ function Portfolio() {
         description={"My Web Development Projects Portfolio"}
       />
       <div className="grid max-w-screen-lg gap-8 row-gap-5 md:row-gap-8 sm:mx-auto sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map(({ title, cover, githubUrl, livePreviewUrl }) => {
+        {projects.map(({ id, title, cover, githubUrl, livePreviewUrl }) => {
           return (
-            <div className="overflow-hidden transition duration-500 transform bg-white shadow-sm card rounded-2xl hover:-translate-y-1 hover:shadow md:text-center ">
+            <div
+              key={id}
+              className="overflow-hidden transition duration-500 transform bg-white shadow-sm card rounded-2xl hover:-translate-y-1 hover:shadow md:text-center "
+            >
               <div className="w-full h-full abosolute">
                 <img
                   className="object-contain w-full max-h-full"

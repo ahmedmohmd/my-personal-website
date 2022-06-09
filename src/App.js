@@ -1,15 +1,15 @@
 //* Imports
 import { Flowbite } from "flowbite-react";
 import { Routes, Route, Link } from "react-router-dom";
+import { useLayoutEffect, useRef } from "react";
 import styled from "styled-components";
 import Home from "./components/home/Home";
 import NavBar from "./components/common/NavBar";
 import Contact from "./components/contact/Contact";
 import Portfolio from "./components/portfolio/Portfolio";
-import About from "./components/about/about";
-import { useLayoutEffect, useRef } from "react";
+import About from "./components/about/About";
 
-//* Style
+//* App Style
 const AppStyle = styled.div`
   position: relative;
 
@@ -17,24 +17,19 @@ const AppStyle = styled.div`
     animation: scaling 1.5s linear infinite alternate;
     transition: 0.3s;
     right: -75px;
-    // display: none;
   }
 
   @keyframes scaling {
     0% {
-      // transform: scale(1.05);
-      // opacity: 1;
       transform: translateY(-5px);
     }
     100% {
-      // transform: scale(1);
-      // opacity: 0.7;
       transform: translateY(5px);
     }
   }
 `;
 
-//* JSX
+//* App JSX
 function App() {
   const scrollBtn = useRef(null);
 

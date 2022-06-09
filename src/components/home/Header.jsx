@@ -3,7 +3,7 @@ import { Button } from "flowbite-react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-//* Style
+//* Header Style
 const HeaderStyle = styled.div`
   h2 {
     font-family: "Permanent Marker";
@@ -57,7 +57,7 @@ const HeaderStyle = styled.div`
   }
 `;
 
-//* JSX
+//* Header JSX
 function Header() {
   return (
     <HeaderStyle className="container mx-auto">

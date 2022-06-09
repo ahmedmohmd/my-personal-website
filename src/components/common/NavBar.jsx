@@ -3,34 +3,25 @@ import { Navbar, DarkThemeToggle } from "flowbite-react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-//* Style
+//* NavBar Style
 const NavBarStyle = styled.div`
   ul {
     gap: 10px;
     .link.active {
-      li {
-        a {
-          color: #fff;
-          background: #3a82f6;
-        }
-      }
+      color: #fff;
+      background: #3a82f6;
     }
 
     .link {
       margin: 0 !important;
-
-      li {
-        a {
-          padding: 0.7rem;
-          border-radius: 10px;
-          transition: 0.5s;
-        }
-      }
+      padding: 0.7rem;
+      border-radius: 10px;
+      transition: 0.5s;
     }
   }
 `;
 
-//* JSX
+//* NavBar JSX
 function NavBar() {
   return (
     <NavBarStyle className="py-1 sm:py-3">
@@ -54,17 +45,29 @@ function NavBar() {
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
-          <NavLink to={"/"} className="link">
-            <Navbar.Link active={false}>Home</Navbar.Link>
+          <NavLink
+            to={"/"}
+            className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 link md:p-0 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+          >
+            Home
           </NavLink>
-          <NavLink to={"/about"} className="link">
-            <Navbar.Link>About</Navbar.Link>
+          <NavLink
+            to={"/about"}
+            className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 link md:p-0 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+          >
+            About
           </NavLink>
-          <NavLink to={"/portfolio"} className="link">
-            <Navbar.Link>Portfolio</Navbar.Link>
+          <NavLink
+            to={"/portfolio"}
+            className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 link md:p-0 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+          >
+            Portfolio
           </NavLink>
-          <NavLink to={"/contact"} className="link">
-            <Navbar.Link>Contact</Navbar.Link>
+          <NavLink
+            to={"/contact"}
+            className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 link md:p-0 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-white"
+          >
+            Contact
           </NavLink>
         </Navbar.Collapse>
       </Navbar>

@@ -1,9 +1,8 @@
-import styled from "styled-components";
+//* Imports
 import Heading from "../common/Heading";
 import ProgressBar from "./ProgressBar";
 
-// const AboutStyle = styled.div``;
-
+//* Skills Array
 const mySkills = [
   {
     skillName: "Git",
@@ -62,40 +61,41 @@ const mySkills = [
   },
 ];
 
+//* About JSX
 function About() {
   return (
-    <div class="text-gray-600 body-font lg:pb-auto pb-5 pt-16 lg:pt-20">
+    <div className="pt-16 pb-5 text-gray-600 body-font lg:pb-auto lg:pt-20">
       <Heading title={"About"} description={"Know More About Me"} />
-      <div class="container px-5 mx-auto flex flex-col justify-center items-start">
-        <div class="lg:w-4/6 mx-auto">
-          <div class="flex flex-col sm:flex-row gap-20 sm:gap-10">
-            <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
-              <div class="w-40 h-40 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
+      <div className="container flex flex-col items-start justify-center px-5 mx-auto">
+        <div className="mx-auto lg:w-4/6">
+          <div className="flex flex-col gap-20 sm:flex-row sm:gap-10">
+            <div className="text-center sm:w-1/3 sm:pr-8 sm:py-8">
+              <div className="inline-flex items-center justify-center w-40 h-40 text-gray-400 bg-gray-200 rounded-full">
                 <img
                   src="/images/personal-photo.jpeg"
-                  alt=""
+                  alt="My Personal Photo"
                   className="border-4 border-blue-500 rounded-full dark:border-white"
                 />
               </div>
-              <div class="flex flex-col items-center text-center justify-center">
-                <h2 class="font-medium title-font mt-4 text-gray-800 dark:text-white text-xl">
+              <div className="flex flex-col items-center justify-center text-center">
+                <h2 className="mt-4 text-xl font-medium text-gray-800 title-font dark:text-white">
                   Ahmed Mohamed
                 </h2>
-                <div class="w-12 h-1 bg-blue-500 rounded mt-2 mb-4"></div>
-                <p class="text-base text-gray-500 dark:text-gray-400">
+                <div className="w-12 h-1 mt-2 mb-4 bg-blue-500 rounded"></div>
+                <p className="text-base text-gray-500 dark:text-gray-400">
                   Hello there, I am Ahmed Mohamed, I am FullStack Web Developer.
                 </p>
               </div>
             </div>
 
-            <div class="pb-24 mx-auto flex flex-wrap">
-              <div class="flex relative pt-10 pb-20 sm:items-center">
-                <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-                  <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+            <div className="flex flex-wrap pb-24 mx-auto">
+              <div className="relative flex pt-10 pb-20 sm:items-center">
+                <div className="absolute inset-0 flex items-center justify-center w-6 h-full">
+                  <div className="w-1 h-full bg-gray-200 pointer-events-none"></div>
                 </div>
-                <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-blue-500 text-white relative z-10 title-font font-medium text-sm"></div>
-                <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-                  <div class="flex-shrink-0 w-24 h-24 bg-blue-100 text-blue-500 rounded-full inline-flex items-center justify-center">
+                <div className="relative z-10 inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mt-10 text-sm font-medium text-white bg-blue-500 rounded-full sm:mt-0 title-font"></div>
+                <div className="flex flex-col items-start flex-grow pl-6 md:pl-8 sm:items-center sm:flex-row">
+                  <div className="inline-flex items-center justify-center flex-shrink-0 w-24 h-24 text-blue-500 bg-blue-100 rounded-full">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="w-10 h-10"
@@ -111,11 +111,11 @@ function About() {
                       />
                     </svg>
                   </div>
-                  <div class="flex flex-col flex-grow gap-2 sm:pl-6 mt-6 sm:mt-0">
-                    <h2 class="font-medium title-font text-gray-800 dark:text-white mb-1 text-xl">
+                  <div className="flex flex-col flex-grow gap-2 mt-6 sm:pl-6 sm:mt-0">
+                    <h2 className="mb-1 text-xl font-medium text-gray-800 title-font dark:text-white">
                       What I do?
                     </h2>
-                    <p class="leading-relaxed text-base text-gray-500 dark:text-gray-400">
+                    <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                       I am a FullStack Developer, Who Work in Two Parts of
                       Making Website Process.
                     </p>
@@ -158,30 +158,31 @@ function About() {
                   </div>
                 </div>
               </div>
-              <div class="flex relative pb-20 sm:items-center w-full">
-                <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-                  <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+              <div className="relative flex w-full pb-20 sm:items-center">
+                <div className="absolute inset-0 flex items-center justify-center w-6 h-full">
+                  <div className="w-1 h-full bg-gray-200 pointer-events-none"></div>
                 </div>
-                <div class="self-start flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-9 inline-flex items-center justify-center bg-blue-500 text-white relative z-10 title-font font-medium text-sm"></div>
-                <div class="flex-grow md:pl-8 pl-6 flex  items-start flex-col sm:flex-row">
-                  <div class="flex-shrink-0 w-24 h-24 bg-blue-100 text-blue-500 rounded-full inline-flex items-center justify-center">
+                <div className="relative z-10 inline-flex items-center self-start justify-center flex-shrink-0 w-6 h-6 mt-10 text-sm font-medium text-white bg-blue-500 rounded-full sm:mt-9 title-font"></div>
+                <div className="flex flex-col items-start flex-grow pl-6 md:pl-8 sm:flex-row">
+                  <div className="inline-flex items-center justify-center flex-shrink-0 w-24 h-24 text-blue-500 bg-blue-100 rounded-full">
                     <img
                       src="/images/skills.svg"
                       alt=""
                       className="w-14 h-14"
                     />
                   </div>
-                  <div class="flex flex-col flex-grow gap-2 sm:pl-6 mt-6 sm:mt-0">
-                    <h2 class="font-medium title-font text-gray-800 dark:text-white mb-1 text-xl">
+                  <div className="flex flex-col flex-grow gap-2 mt-6 sm:pl-6 sm:mt-0">
+                    <h2 className="mb-1 text-xl font-medium text-gray-800 title-font dark:text-white">
                       Skills
                     </h2>
-                    <p class="leading-relaxed text-base text-gray-500 dark:text-gray-400">
+                    <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                       My Skills in Frontend and Backend.
                     </p>
                     <div className="flex flex-col items-center justify-between w-full gap-1 bt-6">
                       {mySkills.map(({ skillName, progress, width }) => {
                         return (
                           <ProgressBar
+                            key={skillName}
                             skillName={skillName}
                             progress={progress}
                             width={width}
@@ -192,71 +193,71 @@ function About() {
                   </div>
                 </div>
               </div>
-              <div class="flex relative pb-20 sm:items-center">
-                <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-                  <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+              <div className="relative flex pb-20 sm:items-center">
+                <div className="absolute inset-0 flex items-center justify-center w-6 h-full">
+                  <div className="w-1 h-full bg-gray-200 pointer-events-none"></div>
                 </div>
-                <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-blue-500 text-white relative z-10 title-font font-medium text-sm"></div>
-                <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-                  <div class="flex-shrink-0 w-24 h-24 bg-blue-100 text-blue-500 rounded-full inline-flex items-center justify-center">
+                <div className="relative z-10 inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mt-10 text-sm font-medium text-white bg-blue-500 rounded-full sm:mt-0 title-font"></div>
+                <div className="flex flex-col items-start flex-grow pl-6 md:pl-8 sm:items-center sm:flex-row">
+                  <div className="inline-flex items-center justify-center flex-shrink-0 w-24 h-24 text-blue-500 bg-blue-100 rounded-full">
                     <img
                       src="/images/education.svg"
                       alt=""
                       className="w-14 h-14"
                     />
                   </div>
-                  <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-                    <h2 class="font-medium title-font text-gray-800 dark:text-white mb-1 text-xl">
+                  <div className="flex-grow mt-6 sm:pl-6 sm:mt-0">
+                    <h2 className="mb-1 text-xl font-medium text-gray-800 title-font dark:text-white">
                       Education
                     </h2>
-                    <p class="leading-relaxed text-base text-gray-500 dark:text-gray-400">
+                    <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                       Electrical Power Engineering Student at SVU.
                     </p>
                   </div>
                 </div>
               </div>
-              <div class="flex relative pb-20 sm:items-center">
-                <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-                  <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+              <div className="relative flex pb-20 sm:items-center">
+                <div className="absolute inset-0 flex items-center justify-center w-6 h-full">
+                  <div className="w-1 h-full bg-gray-200 pointer-events-none"></div>
                 </div>
-                <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-blue-500 text-white relative z-10 title-font font-medium text-sm"></div>
-                <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-                  <div class="flex-shrink-0 w-24 h-24 bg-blue-100 text-blue-500 rounded-full inline-flex items-center justify-center">
+                <div className="relative z-10 inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mt-10 text-sm font-medium text-white bg-blue-500 rounded-full sm:mt-0 title-font"></div>
+                <div className="flex flex-col items-start flex-grow pl-6 md:pl-8 sm:items-center sm:flex-row">
+                  <div className="inline-flex items-center justify-center flex-shrink-0 w-24 h-24 text-blue-500 bg-blue-100 rounded-full">
                     <img
                       src="/images/hoppies.svg"
                       alt=""
                       className="w-14 h-14"
                     />
                   </div>
-                  <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-                    <h2 class="font-medium title-font text-gray-800 dark:text-white mb-1 text-xl">
+                  <div className="flex-grow mt-6 sm:pl-6 sm:mt-0">
+                    <h2 className="mb-1 text-xl font-medium text-gray-800 title-font dark:text-white">
                       Hoppies
                     </h2>
-                    <p class="leading-relaxed text-base text-gray-500 dark:text-gray-400">
+                    <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                       I love shearing Knowladge with Aothers and Learn New
                       Things Every Day. <br />I love Reading and Writing.
                     </p>
                   </div>
                 </div>
               </div>
-              <div class="flex relative pb-20 sm:items-center">
-                <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-                  <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+              <div className="relative flex pb-20 sm:items-center">
+                <div className="absolute inset-0 flex items-center justify-center w-6 h-full">
+                  <div className="w-1 h-full bg-gray-200 pointer-events-none"></div>
                 </div>
-                <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-blue-500 text-white relative z-10 title-font font-medium text-sm"></div>
-                <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-                  <div class="flex-shrink-0 w-24 h-24 bg-blue-100 text-blue-500 rounded-full inline-flex items-center justify-center">
+                <div className="relative z-10 inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mt-10 text-sm font-medium text-white bg-blue-500 rounded-full sm:mt-0 title-font"></div>
+                <div className="flex flex-col items-start flex-grow pl-6 md:pl-8 sm:items-center sm:flex-row">
+                  <div className="inline-flex items-center justify-center flex-shrink-0 w-24 h-24 text-blue-500 bg-blue-100 rounded-full">
                     <img
                       src="/images/experience.svg"
                       alt=""
                       className="w-14 h-14"
                     />
                   </div>
-                  <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-                    <h2 class="font-medium title-font text-gray-800 dark:text-white mb-1 text-xl">
+                  <div className="flex-grow mt-6 sm:pl-6 sm:mt-0">
+                    <h2 className="mb-1 text-xl font-medium text-gray-800 title-font dark:text-white">
                       Experience
                     </h2>
-                    <p class="leading-relaxed text-base text-gray-500 dark:text-gray-400">
+                    <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                       I am Student Now, I hope to be Professional Programmer in
                       The Future.
                     </p>

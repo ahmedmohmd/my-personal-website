@@ -2,7 +2,7 @@
 import Header from "./Header";
 import styled from "styled-components";
 
-//* Style
+//* Home Style
 const HomeStyle = styled.div`
   @media (min-width: 645px) {
     position: absolute;
@@ -12,10 +12,10 @@ const HomeStyle = styled.div`
   }
 `;
 
-//* JSX
+//* Home JSX
 function Home() {
   return (
-    <HomeStyle className="dark:bg-gray-800 w-full">
+    <HomeStyle className="w-full dark:bg-gray-800">
       <Header />
     </HomeStyle>
   );
