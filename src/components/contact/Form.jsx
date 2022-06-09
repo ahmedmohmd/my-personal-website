@@ -35,7 +35,11 @@ const FormStyle = styled.form`
 
 //* Form JSX
 function Form() {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [errors, setErrors] = useState({});
   const [isPending, startTransition] = useTransition();
   const [namePlaceholder, setNamePlaceholder] = useState("Your Name...");
@@ -157,6 +161,11 @@ function Form() {
         }
       });
     }
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
   }
 }
 
