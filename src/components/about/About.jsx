@@ -1,6 +1,7 @@
 //* Imports
 import Heading from "../common/Heading";
 import ProgressBar from "./ProgressBar";
+import { BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
 
 //* Skills Array
 const mySkills = [
@@ -69,7 +70,7 @@ function About() {
       <div className="container flex flex-col items-start justify-center px-5 mx-auto">
         <div className="mx-auto lg:w-4/6">
           <div className="flex flex-col gap-20 sm:flex-row sm:gap-10">
-            <div className="text-center sm:w-1/3 sm:pr-8 sm:py-8">
+            <div className="flex flex-col items-center justify-start text-center sm:w-1/3 sm:py-8">
               <div className="inline-flex items-center justify-center w-40 h-40 text-gray-400 bg-gray-200 rounded-full">
                 <img
                   src="/images/personal-photo.jpeg"
@@ -78,13 +79,37 @@ function About() {
                 />
               </div>
               <div className="flex flex-col items-center justify-center text-center">
-                <h2 className="mt-4 text-xl font-medium font-semibold text-blue-500 title-font dark:text-white">
+                <h2 className="mt-4 text-xl font-semibold text-blue-500 title-font dark:text-white">
                   Ahmed Mohamed
                 </h2>
                 <div className="w-12 h-1 mt-2 mb-4 bg-blue-500 rounded"></div>
                 <p className="text-base text-gray-500 dark:text-gray-400">
                   Hello there, I am Ahmed Mohamed, I am FullStack Web Developer.
                 </p>
+              </div>
+
+              <div className="flex items-center justify-center gap-3 pt-5 text-xl social-icons ">
+                <a
+                  href="https://www.facebook.com/a7m3dmohmd/"
+                  target="_blank"
+                  className="p-2 duration-500 bg-gray-400 rounded-xl hover:bg-facebookColor"
+                >
+                  <BsFacebook className="text-white" />
+                </a>
+                <a
+                  href="https://twitter.com/a7m3D_000"
+                  target="_blank"
+                  className="p-2 duration-500 bg-gray-400 rounded-xl hover:bg-twitterColor"
+                >
+                  <BsTwitter className="text-white" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/ahmedmohmd/"
+                  target="_blank"
+                  className="p-2 duration-500 bg-gray-400 rounded-xl hover:bg-linkedInColor"
+                >
+                  <BsLinkedin className="text-white" />
+                </a>
               </div>
             </div>
 
