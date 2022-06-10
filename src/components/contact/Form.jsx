@@ -41,7 +41,7 @@ function Form() {
     message: "",
   });
   const [errors, setErrors] = useState({});
-  const [isPending, startTransition] = useTransition();
+  const [loading, setLoading] = useState(false);
   const [namePlaceholder, setNamePlaceholder] = useState("Your Name...");
   const [emailPlaceholder, setEmailPlaceholder] = useState("Your Email...");
   const [messagePlaceholder, setMessagePlaceholder] =
@@ -89,7 +89,7 @@ function Form() {
         onBlur={() => setMessagePlaceholder("Your Message...")}
       ></textarea>
       {errors.message && <DangerAlert text={errors.message} />}
-      {isPending ? (
+      {loading ? (
         <button
           disabled
           type="button"
@@ -126,7 +126,8 @@ function Form() {
     </FormStyle>
   );
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
+    setLoading(true);
     event.preventDefault();
     const validateResult = formValidate(formData, schema);
 
@@ -134,38 +135,37 @@ function Form() {
       setErrors(validateResult);
     } else {
       setErrors({});
-      startTransition(async () => {
-        try {
-          await axios.post(config.apiEndPoint, formData);
-          toast.success("Thanks for Your Message", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-          });
-          setFormData({
-            name: "",
-            email: "",
-            message: "",
-          });
-        } catch (error) {
-          await toast.error("Sorry, an Unexpected Error Occured!", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-          });
-        }
-      });
+      try {
+        await axios.post(config.apiEndPoint, formData);
+        toast.success("Thanks for Your Message", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } catch (error) {
+        await toast.error("Sorry, an Unexpected Error Occured!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      }
     }
+    setLoading(false);
   }
 }
 

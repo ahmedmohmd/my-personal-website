@@ -1,3 +1,4 @@
 {
-  "apiEndPoint": "https://my-personal-website-backend.herokuapp.com"
+  "apiEndPoint": "https://my-personal-website-backend.herokuapp.com",
+  "devDotToArticlesApiEndPoint": "https://dev.to/api/articles?username=ahmedmohmd&state=all"
 }

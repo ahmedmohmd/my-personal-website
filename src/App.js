@@ -8,6 +8,7 @@ import NavBar from "./components/common/NavBar";
 import Contact from "./components/contact/Contact";
 import Portfolio from "./components/portfolio/Portfolio";
 import About from "./components/about/About";
+import Articles from "./components/articles/Articles";
 
 //* App Style
 const AppStyle = styled.div`
@@ -56,6 +57,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/about" element={<About />} />
+          <Route path="/articles" element={<Articles />} />
         </Routes>
         <button
           onClick={handleScroll}
