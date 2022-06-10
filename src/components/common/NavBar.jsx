@@ -28,14 +28,9 @@ function NavBar() {
     <NavBarStyle className="py-1 sm:py-3">
       <Navbar className="flex text-center sm:text-left">
         <Navbar.Brand href="/">
-          <div className="flex items-center justify-center gap-2 p-1 mr-3 border-2 border-blue-300 rounded-2xl">
+          <div className="flex items-center justify-center gap-2 p-2 mr-3 border-2 rounded-full border-gray-300/50 dark:border-blue-400/50">
             <img
-              src="/images/letter-a.png"
-              className="h-8 sm:h-10"
-              alt="Flowbite Logo"
-            />
-            <img
-              src="/images/letter-m.png"
+              src="/images/logo.png"
               className="h-8 sm:h-10"
               alt="Flowbite Logo"
             />
