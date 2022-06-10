@@ -92,21 +92,21 @@ function About() {
                 <a
                   href="https://www.facebook.com/a7m3dmohmd/"
                   target="_blank"
-                  className="p-2 duration-500 bg-gray-400 rounded-xl hover:bg-facebookColor"
+                  className="p-2 duration-500 bg-gray-400 dark:bg-gray-500/30 dark:hover:bg-facebookColor rounded-xl hover:bg-facebookColor"
                 >
                   <BsFacebook className="text-white" />
                 </a>
                 <a
                   href="https://twitter.com/a7m3D_000"
                   target="_blank"
-                  className="p-2 duration-500 bg-gray-400 rounded-xl hover:bg-twitterColor"
+                  className="p-2 duration-500 bg-gray-400 dark:bg-gray-500/30 dark:hover:bg-twitterColor rounded-xl hover:bg-twitterColor"
                 >
                   <BsTwitter className="text-white" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/ahmedmohmd/"
                   target="_blank"
-                  className="p-2 duration-500 bg-gray-400 rounded-xl hover:bg-linkedInColor"
+                  className="p-2 duration-500 bg-gray-400 dark:bg-gray-500/30 dark:hover:bg-linkedInColor rounded-xl hover:bg-linkedInColor"
                 >
                   <BsLinkedin className="text-white" />
                 </a>
