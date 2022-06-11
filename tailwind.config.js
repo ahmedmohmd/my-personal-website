@@ -10,6 +10,7 @@ module.exports = {
         facebookColor: "#3b5998",
         twitterColor: "#55acee",
         linkedInColor: "#3077b5",
+        githubColor: "#161b22",
       },
     },
   },

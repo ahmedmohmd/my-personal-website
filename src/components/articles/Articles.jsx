@@ -8,10 +8,6 @@ const ArticlesStyle = styled.div``;
 function Articles() {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
-  console.log(
-    "🚀 ~ file: Articles.jsx ~ line 11 ~ Articles ~ loading",
-    loading
-  );
 
   useEffect(() => {
     const getAllArticles = async () => {
@@ -50,7 +46,7 @@ function Articles() {
                 fill="currentFill"
               />
             </svg>
-            <span>Loading...</span>
+            <span className="text-gray-500 dark:text-gray-400">Loading...</span>
           </div>
         ) : (
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 -m-4 ">

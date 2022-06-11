@@ -1,7 +1,7 @@
 //* Imports
 import Heading from "../common/Heading";
 import ProgressBar from "./ProgressBar";
-import { BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
+import { BsFacebook, BsTwitter, BsLinkedin, BsGithub } from "react-icons/bs";
 
 //* Skills Array
 const mySkills = [
@@ -109,6 +109,13 @@ function About() {
                   className="p-2 duration-500 bg-gray-400 dark:bg-gray-500/30 dark:hover:bg-linkedInColor rounded-xl hover:bg-linkedInColor"
                 >
                   <BsLinkedin className="text-white" />
+                </a>
+                <a
+                  href="https://github.com/ahmedmohmd"
+                  target="_blank"
+                  className="p-2 duration-500 bg-gray-400 dark:bg-gray-500/30 dark:hover:bg-githubColor rounded-xl hover:bg-githubColor"
+                >
+                  <BsGithub className="text-white" />
                 </a>
               </div>
             </div>
