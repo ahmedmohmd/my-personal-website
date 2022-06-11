@@ -68,9 +68,11 @@ function Articles() {
                         alt={`${title} Image`}
                       />
                       <div class="p-6 dark:bg-slate-900">
-                        <h1 class="title-font font-semibold text-lg text-blue-500 dark:text-gray-300 mb-3 truncate">
-                          {title}
-                        </h1>
+                        <a href={url} target="_blank">
+                          <h1 className="mb-3 text-lg font-semibold text-blue-500 truncate title-font dark:text-gray-300">
+                            {title}
+                          </h1>
+                        </a>
                         <p class="leading-relaxed mb-3 text-sm sm:text-base text-gray-500">
                           {description}
                         </p>
