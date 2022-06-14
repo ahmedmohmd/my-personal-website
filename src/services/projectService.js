@@ -74,6 +74,14 @@ const projects = [
     livePreviewUrl:
       "https://sunnyside-agency-landing-page-eosin.vercel.app/#/body",
   },
+
+  {
+    id: 11,
+    title: "Shortly",
+    cover: "/images/shortly-app.png",
+    githubUrl: "https://github.com/ahmedmohmd/shortly",
+    livePreviewUrl: "https://shortly-nine-beta.vercel.app/",
+  },
 ];
 
 export default projects;
