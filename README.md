@@ -49,4 +49,4 @@ The Wesbite have nice design and responsive design.
 -----
 
 # Web App Screenshot
-![Markdown Blog App Screenshot](https://github.com/ahmedmohmd/my-personal-website/blob/main/app-screenshot.png?raw=true)
+<!-- ![Markdown Blog App Screenshot](https://github.com/ahmedmohmd/my-personal-website/blob/main/app-screenshot.png?raw=true) -->
