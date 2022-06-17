@@ -46,7 +46,7 @@ const projects = [
     githubUrl:
       "https://github.com/ahmedmohmd/time-tracking-dashboard/tree/main",
     livePreviewUrl:
-      "https://time-tracking-dashboard-seven-zeta.vercel.app/#/weekly",
+      "https://time-tracking-dashboard-seven-zeta.vercel.app/weekly",
     category: "frontend",
   },
   {
@@ -72,7 +72,7 @@ const projects = [
     githubUrl:
       "https://github.com/ahmedmohmd/-stripe-payment-frontend/tree/main",
     livePreviewUrl: "https://stripe-payment-frontend.vercel.app/",
-    category: "frontend",
+    category: "fullstack",
   },
   {
     id: 10,
@@ -91,7 +91,7 @@ const projects = [
     cover: "/images/shortly-app.png",
     githubUrl: "https://github.com/ahmedmohmd/shortly",
     livePreviewUrl: "https://shortly-nine-beta.vercel.app/",
-    category: "frontend",
+    category: "fullstack",
   },
 ];
 

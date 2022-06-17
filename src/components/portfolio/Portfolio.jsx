@@ -145,21 +145,32 @@ function Portfolio() {
                       href={githubUrl}
                       target="_blank"
                       type="reset"
-                      className="flex items-center justify-center gap-1 px-2 py-2 font-semibold text-white duration-500 text-md rounded-xl bg-slate-800 hover:bg-slate-900"
+                      className="flex items-center justify-center gap-1 px-3 py-2 font-semibold text-white duration-500 text-md rounded-xl bg-slate-800 hover:bg-slate-900"
                     >
                       <span>Github</span>
                       <BsGithub className="w-5 h-5 ml-2" />
                     </a>
 
-                    <a
-                      href={livePreviewUrl}
-                      target="_blank"
-                      type="reset"
-                      className="flex items-center justify-center gap-1 px-2 py-2 font-semibold text-white duration-500 bg-purple-600 text-md rounded-xl hover:bg-purple-800"
-                    >
-                      <span>Preview</span>
-                      <AiFillEye className="w-5 h-5 ml-2" />
-                    </a>
+                    {livePreviewUrl ? (
+                      <a
+                        href={livePreviewUrl}
+                        target="_blank"
+                        type="reset"
+                        className="flex items-center justify-center gap-1 px-3 py-2 font-semibold text-white duration-500 bg-purple-600 text-md rounded-xl hover:bg-purple-800"
+                      >
+                        <span>Preview</span>
+                        <AiFillEye className="w-5 h-5 ml-2" />
+                      </a>
+                    ) : (
+                      <button
+                        type="button"
+                        className="flex items-center justify-center gap-1 px-3 py-2 font-semibold text-white duration-500 bg-purple-400 text-md rounded-xl"
+                        disabled
+                      >
+                        <span>Preview</span>
+                        <AiFillEye className="w-5 h-5 ml-2" />
+                      </button>
+                    )}
                   </div>
                 </div>
               );
