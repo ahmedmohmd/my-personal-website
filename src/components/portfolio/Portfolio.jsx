@@ -75,7 +75,7 @@ function Portfolio() {
   });
 
   return (
-    <PortfolioStyle className="px-4 py-16 mx-auto dark:bg-gray-800 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <PortfolioStyle className="px-4 py-16 mx-auto dark:bg-whale-dark sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <Heading
         title={"Portfolio"}
         description={"My Web Development Projects Portfolio"}
@@ -135,7 +135,7 @@ function Portfolio() {
                     />
                   </div>
                   <div className="absolute flex items-center justify-start w-full h-10 px-6 py-6 text-white bg-blue-500 project-title sm:px-8 z-1">
-                    <h5 className="mb-2 text-xl font-extrabold leading-none sm:text-xl">
+                    <h5 className="mb-2 text-xl font-extrabold leading-none">
                       {title}
                     </h5>
                   </div>

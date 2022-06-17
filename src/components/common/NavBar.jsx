@@ -25,8 +25,8 @@ const NavBarStyle = styled.div`
 //* NavBar JSX
 function NavBar() {
   return (
-    <NavBarStyle className="py-1 sm:py-3">
-      <Navbar className="flex text-center sm:text-left">
+    <NavBarStyle className="py-1 sm:py-3 dark:bg-whale-dark">
+      <Navbar className="flex text-center sm:text-left dark:!bg-whale-dark">
         <Navbar.Brand href="/">
           <div className="flex items-center justify-center gap-2 p-2 mr-3 rounded-full ">
             <img

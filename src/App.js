@@ -50,7 +50,7 @@ function App() {
 
   return (
     <Flowbite>
-      <AppStyle className="min-h-screen bg-white App dark:bg-gray-800">
+      <AppStyle className="min-h-screen bg-white App dark:bg-whale-dark">
         <NavBar />
         <Routes>
           <Route path="/" exact element={<Home />} />

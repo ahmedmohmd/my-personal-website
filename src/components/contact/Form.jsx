@@ -49,12 +49,12 @@ function Form() {
 
   return (
     <FormStyle
-      className="flex flex-col items-center justify-center w-full gap-5 p-3 xl:w-1/3 md:w-1/2 dark:bg-gray-800"
+      className="flex flex-col items-center justify-center w-full gap-5 p-3 xl:w-1/3 md:w-1/2 dark:bg-whale-dark"
       onSubmit={handleSubmit}
     >
       <input
         type="text"
-        className="w-full min-w-full text-gray-500 border-2 border-gray-300 dark:text-gray-300 form-input rounded-2xl h-14 sm:w-1/3 dark:bg-gray-900 dark:text-white dark:focus:border-blue-800 dark:border-transparent focus:border-blue-300"
+        className="w-full min-w-full text-gray-500 border-2 border-gray-300 dark:text-gray-300 form-input rounded-2xl h-14 sm:w-1/3 dark:bg-slate-800 placeholder:font-semibold dark:placeholder:text-gray-500 placeholder:text-gray-300 dark:focus:border-blue-800 dark:border-transparent focus:border-blue-300"
         placeholder={namePlaceholder}
         onChange={(event) =>
           setFormData({ ...formData, name: event.target.value })
@@ -67,7 +67,7 @@ function Form() {
       <input
         type="email"
         placeholder={emailPlaceholder}
-        className="w-full min-w-full text-gray-500 border-2 border-gray-300 dark:text-gray-300 form-input rounded-2xl h-14 sm:w-1/3 dark:bg-gray-900 dark:text-white dark:focus:border-blue-800 dark:border-transparent focus:border-blue-300"
+        className="w-full min-w-full text-gray-500 border-2 border-gray-300 dark:text-gray-300 form-input rounded-2xl h-14 sm:w-1/3 dark:bg-slate-800 placeholder:font-semibold dark:placeholder:text-gray-500 placeholder:text-gray-300 dark:focus:border-blue-800 dark:border-transparent focus:border-blue-300"
         onChange={(event) =>
           setFormData({ ...formData, email: event.target.value })
         }
@@ -77,7 +77,7 @@ function Form() {
       />
       {errors.email && <DangerAlert text={errors.email} />}
       <textarea
-        className="w-full min-w-full p-4 text-gray-500 border-2 border-gray-300 dark:text-gray-300 form-textarea rounded-2xl sm:w-1/3 dark:bg-gray-900 dark:text-white dark:focus:border-blue-800 dark:border-transparent focus:border-blue-300"
+        className="w-full min-w-full p-4 text-gray-500 border-2 border-gray-300 dark:text-gray-300 form-textarea rounded-2xl sm:w-1/3 dark:bg-slate-800 placeholder:font-semibold dark:placeholder:text-gray-500 placeholder:text-gray-300 dark:focus:border-blue-800 dark:border-transparent focus:border-blue-300"
         cols="30"
         rows="10"
         placeholder={messagePlaceholder}

@@ -15,7 +15,7 @@ const HomeStyle = styled.div`
 //* Home JSX
 function Home() {
   return (
-    <HomeStyle className="w-full dark:bg-gray-800">
+    <HomeStyle className="w-full dark:bg-whale-dark">
       <Header />
     </HomeStyle>
   );

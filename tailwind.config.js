@@ -7,11 +7,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        facebookColor: "#3b5998",
-        twitterColor: "#55acee",
-        linkedInColor: "#3077b5",
-        githubColor: "#161b22",
-        "whale-dark": "#000",
+        "whale-dark": "#0f172a",
+        "whale-light": "#fff",
+        "facebook-color": "#3b5998",
+        "twitter-color": "#55acee",
+        "linkedin-color": "#3077b5",
+        "github-color": "#161b22",
       },
     },
   },

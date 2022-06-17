@@ -22,7 +22,7 @@ function Articles() {
   }, []);
 
   return (
-    <ArticlesStyle className="mx-auto text-gray-600 body-font dark:bg-gray-800 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <ArticlesStyle className="mx-auto text-gray-600 body-font dark:bg-whale-dark sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div class="container px-5 py-16 lg:pt-0 lg:pb-16 mx-auto">
         <Heading
           title={"Articles"}
@@ -67,7 +67,7 @@ function Articles() {
                         src={cover_image}
                         alt={`${title} Image`}
                       />
-                      <div class="p-6 dark:bg-slate-900">
+                      <div class="p-6 dark:bg-slate-800">
                         <a href={url} target="_blank">
                           <h1 className="mb-3 text-lg font-semibold text-blue-500 truncate title-font dark:text-gray-300">
                             {title}
