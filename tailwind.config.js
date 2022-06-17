@@ -11,6 +11,7 @@ module.exports = {
         twitterColor: "#55acee",
         linkedInColor: "#3077b5",
         githubColor: "#161b22",
+        "whale-dark": "#000",
       },
     },
   },
