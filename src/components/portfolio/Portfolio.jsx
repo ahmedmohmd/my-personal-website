@@ -9,6 +9,10 @@ import { useEffect, useState } from "react";
 
 //* Portfolio Style
 const PortfolioStyle = styled.div`
+  #current-page {
+    color: red;
+  }
+
   .card {
     position: relative;
     font-family: "Cairo";
@@ -65,14 +69,7 @@ const PortfolioStyle = styled.div`
 
 //* Portfolio JSX
 function Portfolio() {
-  const [loading, setLoading] = useState(false);
-  const [myProjects, setMyProjects] = useState([]);
-
-  useEffect(() => {
-    setLoading(true);
-    setMyProjects([...projects]);
-    setLoading(false);
-  });
+  const [page, setPage] = useState(0);
 
   return (
     <PortfolioStyle className="px-4 py-16 mx-auto dark:bg-whale-dark sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -80,104 +77,141 @@ function Portfolio() {
         title={"Portfolio"}
         description={"My Web Development Projects Portfolio"}
       />
-      {loading ? (
-        <div className="flex flex-col items-center justify-center w-full h-full gap-2">
-          <svg
-            role="status"
-            class="inline w-10 h-10 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
-            viewBox="0 0 100 101"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-              fill="currentColor"
-            />
-            <path
-              d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-              fill="currentFill"
-            />
-          </svg>
-          <span className="text-gray-500 dark:text-gray-400">Loading...</span>
-        </div>
-      ) : (
-        <div className="grid max-w-screen-lg gap-8 row-gap-5 md:row-gap-8 sm:mx-auto sm:grid-cols-2 lg:grid-cols-3">
-          {myProjects.map(
-            ({ id, title, cover, githubUrl, livePreviewUrl, category }) => {
-              return (
-                <div
-                  key={id}
-                  className="overflow-hidden transition duration-500 transform bg-white shadow-sm card rounded-2xl hover:-translate-y-1 hover:shadow md:text-center "
-                >
-                  <div className="absolute z-20 right-2 top-2 category">
-                    {category === "fullstack" ? (
-                      <div class=" flex items-center justify-center gap-1 bg-cyan-100 text-cyan-800 text-xs font-semibold mr-2 px-2 py-0.5 rounded-md  dark:bg-cyan-200 dark:text-cyan-900">
-                        <span>Full Stack</span>
-                        <GoPrimitiveDot />
-                      </div>
-                    ) : category === "frontend" ? (
-                      <div class="flex items-center justify-center gap-1  bg-orange-100 text-orange-800 text-xs font-semibold mr-2 px-2 py-0.5 rounded-md  dark:bg-orange-200 dark:text-orange-800">
-                        <span>Front End</span>
-                        <GoPrimitiveDot />
-                      </div>
-                    ) : (
-                      <div class="flex items-center justify-center gap-1  bg-purple-100 text-purple-800 text-xs font-semibold mr-2 px-2 py-0.5 rounded-md  dark:bg-purple-200 dark:text-purple-900">
-                        <span>Back End</span>
-                        <GoPrimitiveDot />
-                      </div>
-                    )}
-                  </div>
-                  <div className="w-full h-full abosolute">
-                    <img
-                      className="object-cover w-full h-full"
-                      src={cover}
-                      alt={title}
-                    />
-                  </div>
-                  <div className="absolute flex items-center justify-start w-full h-10 px-6 py-6 text-white bg-blue-500 project-title sm:px-8 z-1">
-                    <h5 className="mb-2 text-xl font-extrabold leading-none">
-                      {title}
-                    </h5>
-                  </div>
+      {
+        <div className="flex flex-col items-center justify-center gap-10 projects">
+          <div className="grid max-w-screen-lg gap-8 row-gap-5 md:row-gap-8 sm:mx-auto sm:grid-cols-2 lg:grid-cols-3">
+            {projects[page].map(
+              ({ id, title, cover, githubUrl, livePreviewUrl, category }) => {
+                return (
+                  <div
+                    key={id}
+                    className="overflow-hidden transition duration-500 transform bg-white shadow-sm card rounded-2xl hover:-translate-y-1 hover:shadow md:text-center "
+                  >
+                    <div className="absolute z-20 right-2 top-2 category">
+                      {category === "fullstack" ? (
+                        <div class=" flex items-center justify-center gap-1 bg-cyan-100 text-cyan-800 text-xs font-semibold mr-2 px-2 py-0.5 rounded-md  dark:bg-cyan-200 dark:text-cyan-900">
+                          <span>Full Stack</span>
+                          <GoPrimitiveDot />
+                        </div>
+                      ) : category === "frontend" ? (
+                        <div class="flex items-center justify-center gap-1  bg-orange-100 text-orange-800 text-xs font-semibold mr-2 px-2 py-0.5 rounded-md  dark:bg-orange-200 dark:text-orange-800">
+                          <span>Front End</span>
+                          <GoPrimitiveDot />
+                        </div>
+                      ) : (
+                        <div class="flex items-center justify-center gap-1  bg-purple-100 text-purple-800 text-xs font-semibold mr-2 px-2 py-0.5 rounded-md  dark:bg-purple-200 dark:text-purple-900">
+                          <span>Back End</span>
+                          <GoPrimitiveDot />
+                        </div>
+                      )}
+                    </div>
+                    <div className="w-full h-full abosolute">
+                      <img
+                        className="object-cover w-full h-full"
+                        src={cover}
+                        alt={title}
+                      />
+                    </div>
+                    <div className="absolute flex items-center justify-start w-full h-10 px-6 py-6 text-white bg-blue-500 project-title sm:px-8 z-1">
+                      <h5 className="mb-2 text-xl font-extrabold leading-none">
+                        {title}
+                      </h5>
+                    </div>
 
-                  <div className="absolute flex items-center w-full duration-500 -translate-x-1/2 -translate-y-1/2 btns justify-evenly top-1/2 left-1/2">
-                    <a
-                      href={githubUrl}
-                      target="_blank"
-                      type="reset"
-                      className="flex items-center justify-center gap-1 px-3 py-2 font-semibold text-white duration-500 text-md rounded-xl bg-slate-800 hover:bg-slate-900"
-                    >
-                      <span>Github</span>
-                      <BsGithub className="w-5 h-5 ml-2" />
-                    </a>
-
-                    {livePreviewUrl ? (
+                    <div className="absolute flex items-center w-full duration-500 -translate-x-1/2 -translate-y-1/2 btns justify-evenly top-1/2 left-1/2">
                       <a
-                        href={livePreviewUrl}
+                        href={githubUrl}
                         target="_blank"
                         type="reset"
-                        className="flex items-center justify-center gap-1 px-3 py-2 font-semibold text-white duration-500 bg-purple-600 text-md rounded-xl hover:bg-purple-800"
+                        className="flex items-center justify-center gap-1 px-3 py-2 font-semibold text-white duration-500 text-md rounded-xl bg-slate-800 hover:bg-slate-900"
                       >
-                        <span>Preview</span>
-                        <AiFillEye className="w-5 h-5 ml-2" />
+                        <span>Github</span>
+                        <BsGithub className="w-5 h-5 ml-2" />
                       </a>
-                    ) : (
-                      <button
-                        type="button"
-                        className="flex items-center justify-center gap-1 px-3 py-2 font-semibold text-white duration-500 bg-purple-400 text-md rounded-xl"
-                        disabled
-                      >
-                        <span>Preview</span>
-                        <AiFillEye className="w-5 h-5 ml-2" />
-                      </button>
-                    )}
+
+                      {livePreviewUrl ? (
+                        <a
+                          href={livePreviewUrl}
+                          target="_blank"
+                          type="reset"
+                          className="flex items-center justify-center gap-1 px-3 py-2 font-semibold text-white duration-500 bg-purple-600 text-md rounded-xl hover:bg-purple-800"
+                        >
+                          <span>Preview</span>
+                          <AiFillEye className="w-5 h-5 ml-2" />
+                        </a>
+                      ) : (
+                        <button
+                          type="button"
+                          className="flex items-center justify-center gap-1 px-3 py-2 font-semibold text-white duration-500 bg-purple-400 text-md rounded-xl"
+                          disabled
+                        >
+                          <span>Preview</span>
+                          <AiFillEye className="w-5 h-5 ml-2" />
+                        </button>
+                      )}
+                    </div>
                   </div>
-                </div>
-              );
-            }
-          )}
+                );
+              }
+            )}
+          </div>
+
+          <div class="inline-flex gap-4">
+            <button
+              disabled={page === 0}
+              onClick={() => {
+                setPage(page - 1);
+              }}
+              class={
+                "inline-flex items-center py-2 px-4 text-sm font-medium  duration-30 " +
+                (page === 0
+                  ? "text-gray-500 rounded-lg border border-gray-300 bg-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-40"
+                  : "text-white bg-blue-500 rounded-lg  dark:border-gray-700 dark:hover:bg-blue-600")
+              }
+            >
+              <svg
+                class="mr-2 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Prev
+            </button>
+            <button
+              disabled={page === projects.length - 1}
+              onClick={() => {
+                setPage(page + 1);
+              }}
+              class={
+                "inline-flex items-center py-2 px-4 text-sm font-medium  duration-30 " +
+                (page === projects.length - 1
+                  ? "text-gray-500 rounded-lg border border-gray-300 bg-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-40"
+                  : "text-white bg-blue-500 rounded-lg  dark:border-gray-700 dark:hover:bg-blue-600")
+              }
+            >
+              Next
+              <svg
+                class="ml-2 w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
         </div>
-      )}
+      }
     </PortfolioStyle>
   );
 }
