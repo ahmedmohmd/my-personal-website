@@ -1,25 +1,33 @@
 import { useEffect, useState, useTransition } from "react";
 import styled from "styled-components";
+import paginate from "../../helpers/paginate";
 import getArticles from "../../services/articlesService";
 import Heading from "../common/Heading";
 
 const ArticlesStyle = styled.div``;
 
 function Articles() {
-  const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  const [page, setPage] = useState(1);
+  const [articles, setArticles] = useState([]);
+  const [next, setNext] = useState(0);
+  const [prev, setPrev] = useState(0);
 
   useEffect(() => {
     const getAllArticles = async () => {
       setLoading(true);
       const { data } = await getArticles();
+      const { next, previous, result } = paginate(data, page, 9);
+      setArticles(result);
+      setNext(next);
+      setPrev(previous);
 
-      setArticles(data);
       setLoading(false);
     };
 
     getAllArticles();
-  }, []);
+  }, [page]);
 
   return (
     <ArticlesStyle className="mx-auto text-gray-600 body-font dark:bg-whale-dark sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -49,77 +57,137 @@ function Articles() {
             <span className="text-gray-500 dark:text-gray-400">Loading...</span>
           </div>
         ) : (
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 -m-4 ">
-            {articles.map(
-              ({
-                id,
-                title,
-                description,
-                url,
-                reading_time_minutes,
-                cover_image,
-              }) => {
-                return (
-                  <div class="p-4" key={id}>
-                    <div class=" transition duration-500 transform hadow-sm hover:-translate-y-1  border-2 border-gray-200 dark:border-transparent border-opacity-60 rounded-xl overflow-hidden">
-                      <img
-                        class="h-full w-full object-contain object-center"
-                        src={cover_image}
-                        alt={`${title} Image`}
-                      />
-                      <div class="p-6 dark:bg-slate-800">
-                        <a href={url} target="_blank">
-                          <h1 className="mb-3 text-lg font-semibold text-blue-500 truncate title-font dark:text-gray-300">
-                            {title}
-                          </h1>
-                        </a>
-                        <p class="leading-relaxed mb-3 text-sm sm:text-base text-gray-500">
-                          {description}
-                        </p>
-                        <div class="flex items-center flex-wrap  justify-between">
-                          <a
-                            href={url}
-                            target="_blank"
-                            class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"
-                          >
-                            Read
-                            <svg
-                              class="w-4 h-4 ml-2"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              fill="none"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <path d="M5 12h14"></path>
-                              <path d="M12 5l7 7-7 7"></path>
-                            </svg>
+          <div className="flex flex-col items-center justify-center gap-10 projects">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 -m-4 ">
+              {articles.map(
+                ({
+                  id,
+                  title,
+                  description,
+                  url,
+                  reading_time_minutes,
+                  cover_image,
+                }) => {
+                  return (
+                    <div class="p-4" key={id}>
+                      <div class=" transition duration-500 transform hadow-sm hover:-translate-y-1  border-2 border-gray-200 dark:border-transparent border-opacity-60 rounded-xl overflow-hidden">
+                        <img
+                          class="h-full w-full object-contain object-center"
+                          src={cover_image}
+                          alt={`${title} Image`}
+                        />
+                        <div class="p-6 dark:bg-slate-800">
+                          <a href={url} target="_blank">
+                            <h1 className="mb-3 text-lg font-semibold text-blue-500 truncate title-font dark:text-gray-300">
+                              {title}
+                            </h1>
                           </a>
-                          <span class="text-gray-400  inline-flex items-center gap-2 lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 ">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="w-6 h-6"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                              strokeWidth={2}
+                          <p class="leading-relaxed mb-3 text-sm sm:text-base text-gray-500">
+                            {description}
+                          </p>
+                          <div class="flex items-center flex-wrap  justify-between">
+                            <a
+                              href={url}
+                              target="_blank"
+                              class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"
                             >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                              />
-                            </svg>
-                            <span>{reading_time_minutes} Menuits</span>
-                          </span>
+                              Read
+                              <svg
+                                class="w-4 h-4 ml-2"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              >
+                                <path d="M5 12h14"></path>
+                                <path d="M12 5l7 7-7 7"></path>
+                              </svg>
+                            </a>
+                            <span class="text-gray-400  inline-flex items-center gap-2 lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 ">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="w-6 h-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={2}
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                                />
+                              </svg>
+                              <span>{reading_time_minutes} Menuits</span>
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                );
-              }
-            )}
+                  );
+                }
+              )}
+            </div>
+            <div class="inline-flex gap-4">
+              <button
+                disabled={!prev}
+                onClick={() => {
+                  if (prev) {
+                    setPage(page - 1);
+                  }
+                }}
+                class={
+                  "inline-flex items-center py-2 px-4 text-sm font-medium  duration-300 " +
+                  (!prev
+                    ? "text-gray-500 rounded-lg border border-gray-300 bg-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-40"
+                    : "text-white bg-blue-500 rounded-lg  dark:border-gray-700 hover:bg-blue-600")
+                }
+              >
+                <svg
+                  class="mr-2 w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                Prev
+              </button>
+              <button
+                disabled={!next}
+                onClick={() => {
+                  if (next) {
+                    setPage(page + 1);
+                  }
+                }}
+                class={
+                  "inline-flex items-center py-2 px-4 text-sm font-medium  duration-300 " +
+                  (!next
+                    ? "text-gray-500 rounded-lg border border-gray-300 bg-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-40"
+                    : "text-white bg-blue-500 rounded-lg  dark:border-gray-700 hover:bg-blue-600 duration-3000")
+                }
+              >
+                Next
+                <svg
+                  class="ml-2 w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </div>
           </div>
         )}
       </div>

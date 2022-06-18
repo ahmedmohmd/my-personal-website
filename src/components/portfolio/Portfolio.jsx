@@ -6,6 +6,7 @@ import { GoPrimitiveDot } from "react-icons/go";
 import projects from "../../services/projectService";
 import Heading from "../common/Heading";
 import { useEffect, useState } from "react";
+import paginate from "../../helpers/paginate";
 
 //* Portfolio Style
 const PortfolioStyle = styled.div`
@@ -69,7 +70,17 @@ const PortfolioStyle = styled.div`
 
 //* Portfolio JSX
 function Portfolio() {
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
+  const [currentProjects, setCurrentProjects] = useState([]);
+  const [next, setNext] = useState(0);
+  const [prev, setPrev] = useState(0);
+
+  useEffect(() => {
+    const { next, previous, result } = paginate(projects, page, 9);
+    setCurrentProjects(result);
+    setNext(next);
+    setPrev(previous);
+  }, [page]);
 
   return (
     <PortfolioStyle className="px-4 py-16 mx-auto dark:bg-whale-dark sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -80,7 +91,7 @@ function Portfolio() {
       {
         <div className="flex flex-col items-center justify-center gap-10 projects">
           <div className="grid max-w-screen-lg gap-8 row-gap-5 md:row-gap-8 sm:mx-auto sm:grid-cols-2 lg:grid-cols-3">
-            {projects[page].map(
+            {currentProjects.map(
               ({ id, title, cover, githubUrl, livePreviewUrl, category }) => {
                 return (
                   <div
@@ -160,13 +171,15 @@ function Portfolio() {
             <button
               disabled={page === 0}
               onClick={() => {
-                setPage(page - 1);
+                if (prev) {
+                  setPage(page - 1);
+                }
               }}
               class={
-                "inline-flex items-center py-2 px-4 text-sm font-medium  duration-30 " +
-                (page === 0
+                "inline-flex items-center py-2 px-4 text-sm font-medium  duration-300 " +
+                (!prev
                   ? "text-gray-500 rounded-lg border border-gray-300 bg-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-40"
-                  : "text-white bg-blue-500 rounded-lg  dark:border-gray-700 dark:hover:bg-blue-600")
+                  : "text-white bg-blue-500 rounded-lg  dark:border-gray-700 hover:bg-blue-600")
               }
             >
               <svg
@@ -186,13 +199,15 @@ function Portfolio() {
             <button
               disabled={page === projects.length - 1}
               onClick={() => {
-                setPage(page + 1);
+                if (next) {
+                  setPage(page + 1);
+                }
               }}
               class={
-                "inline-flex items-center py-2 px-4 text-sm font-medium  duration-30 " +
-                (page === projects.length - 1
+                "inline-flex items-center py-2 px-4 text-sm font-medium  duration-300 " +
+                (!next
                   ? "text-gray-500 rounded-lg border border-gray-300 bg-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-40"
-                  : "text-white bg-blue-500 rounded-lg  dark:border-gray-700 dark:hover:bg-blue-600")
+                  : "text-white bg-blue-500 rounded-lg  dark:border-gray-700 hover:bg-blue-600")
               }
             >
               Next
