@@ -93,6 +93,82 @@ const projects = [
     livePreviewUrl: "https://shortly-nine-beta.vercel.app/",
     category: "fullstack",
   },
+  {
+    id: 12,
+    title: "ClipBoard Landing Page",
+    cover: "/images/clipboard-landing-page.png",
+    githubUrl: "https://github.com/ahmedmohmd/clipboard-landing-page/tree/main",
+    livePreviewUrl: "https://clipboard-landing-page-neon.vercel.app/",
+    category: "frontend",
+  },
+  {
+    id: 13,
+    title: "Noah",
+    cover: "/images/noah.png",
+    githubUrl: "https://github.com/ahmedmohmd/L--Noah/tree/main",
+    livePreviewUrl: "https://noah-gamma.vercel.app/",
+    category: "frontend",
+  },
+  {
+    id: 14,
+    title: "Card Page",
+    cover: "/images/card-page.png",
+    githubUrl: "https://github.com/ahmedmohmd/L--Card-Page/tree/main",
+    livePreviewUrl: "https://card-page-iota.vercel.app/",
+    category: "frontend",
+  },
+  {
+    id: 15,
+    title: "Fylo",
+    cover: "/images/fylo.png",
+    githubUrl:
+      "https://github.com/ahmedmohmd/L--Fylo-Dark-Theme-Landing-Page/tree/main",
+    livePreviewUrl:
+      "https://fylo-dark-theme-landing-page-ivory-three.vercel.app/",
+    category: "frontend",
+  },
+  {
+    id: 16,
+    title: "Testimonials Slider",
+    cover: "/images/testimonials-slider.png",
+    githubUrl:
+      "https://github.com/ahmedmohmd/H--Coding-Bootcamp-Testimonials-Slider/tree/main",
+    livePreviewUrl:
+      "https://coding-bootcamp-testimonials-slider-swart-three.vercel.app/",
+    category: "frontend",
+  },
+  {
+    id: 17,
+    title: "Github User Search",
+    cover: "/images/github-search.png",
+    githubUrl:
+      "https://github.com/ahmedmohmd/H--GitHub-User-Search-App/tree/main",
+    livePreviewUrl: "https://github-user-search-app-two-smoky.vercel.app/",
+    category: "frontend",
+  },
+  {
+    id: 18,
+    title: "Markdown Blog",
+    cover: "/images/markdown-blog.png",
+    githubUrl: "https://github.com/ahmedmohmd/markdown-blog/tree/main",
+    livePreviewUrl: "https://markdown-blog-orcin.vercel.app/",
+    category: "fullstack",
+  },
+  {
+    id: 19,
+    title: "Ayah Bot",
+    cover: "/images/ayah-bot.png",
+    githubUrl: "https://github.com/ahmedmohmd/ayah-bot",
+    livePreviewUrl: "https://t.me/random_ayah_bot",
+    category: "backend",
+  },
+  {
+    id: 20,
+    title: "Notes App",
+    cover: "/images/notes-app.png",
+    githubUrl: "https://github.com/ahmedmohmd/notes-app",
+    category: "backend",
+  },
 ];
 
 export default projects;

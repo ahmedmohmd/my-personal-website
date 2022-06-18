@@ -129,7 +129,7 @@ function Portfolio() {
                   </div>
                   <div className="w-full h-full abosolute">
                     <img
-                      className="object-contain w-full max-h-full"
+                      className="object-cover w-full h-full"
                       src={cover}
                       alt={title}
                     />
