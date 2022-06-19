@@ -26,7 +26,7 @@ function Contact() {
           <div>
             <img
               className="object-contain w-full sm:h-64 md:h-80 lg:h-96"
-              src="/images/contact-us.svg"
+              src="/images/contact/contact-us.svg"
               alt="Contact Illustration"
             />
           </div>

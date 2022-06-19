@@ -6,7 +6,8 @@ import { GoPrimitiveDot } from "react-icons/go";
 import projects from "../../services/projectService";
 import Heading from "../common/Heading";
 import { useEffect, useState } from "react";
-import paginate from "../../helpers/paginate";
+import paginate from "../../utilities/paginate";
+import getProjects from "../../services/projectService";
 
 //* Portfolio Style
 const PortfolioStyle = styled.div`
@@ -76,6 +77,7 @@ function Portfolio() {
   const [prev, setPrev] = useState(0);
 
   useEffect(() => {
+    const projects = getProjects();
     const { next, previous, result } = paginate(projects, page, 9);
     setCurrentProjects(result);
     setNext(next);
@@ -100,17 +102,17 @@ function Portfolio() {
                   >
                     <div className="absolute z-20 right-2 top-2 category">
                       {category === "fullstack" ? (
-                        <div class=" flex items-center justify-center gap-1 bg-cyan-100 text-cyan-800 text-xs font-semibold mr-2 px-2 py-0.5 rounded-md  dark:bg-cyan-200 dark:text-cyan-900">
+                        <div className=" flex items-center justify-center gap-1 bg-cyan-100 text-cyan-800 text-xs font-semibold mr-2 px-2 py-0.5 rounded-md  dark:bg-cyan-200 dark:text-cyan-900">
                           <span>Full Stack</span>
                           <GoPrimitiveDot />
                         </div>
                       ) : category === "frontend" ? (
-                        <div class="flex items-center justify-center gap-1  bg-orange-100 text-orange-800 text-xs font-semibold mr-2 px-2 py-0.5 rounded-md  dark:bg-orange-200 dark:text-orange-800">
+                        <div className="flex items-center justify-center gap-1  bg-orange-100 text-orange-800 text-xs font-semibold mr-2 px-2 py-0.5 rounded-md  dark:bg-orange-200 dark:text-orange-800">
                           <span>Front End</span>
                           <GoPrimitiveDot />
                         </div>
                       ) : (
-                        <div class="flex items-center justify-center gap-1  bg-purple-100 text-purple-800 text-xs font-semibold mr-2 px-2 py-0.5 rounded-md  dark:bg-purple-200 dark:text-purple-900">
+                        <div className="flex items-center justify-center gap-1  bg-purple-100 text-purple-800 text-xs font-semibold mr-2 px-2 py-0.5 rounded-md  dark:bg-purple-200 dark:text-purple-900">
                           <span>Back End</span>
                           <GoPrimitiveDot />
                         </div>
@@ -168,7 +170,7 @@ function Portfolio() {
           </div>
 
           {prev || next ? (
-            <div class="inline-flex gap-4">
+            <div className="inline-flex gap-4">
               <button
                 disabled={page === 0}
                 onClick={() => {
@@ -176,7 +178,7 @@ function Portfolio() {
                     setPage(page - 1);
                   }
                 }}
-                class={
+                className={
                   "inline-flex items-center py-2 px-4 text-sm font-medium  duration-300 " +
                   (!prev
                     ? "text-gray-500 rounded-lg border border-gray-300 bg-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-40"
@@ -184,15 +186,15 @@ function Portfolio() {
                 }
               >
                 <svg
-                  class="mr-2 w-5 h-5"
+                  className="w-5 h-5 mr-2"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
                 Prev
@@ -204,7 +206,7 @@ function Portfolio() {
                     setPage(page + 1);
                   }
                 }}
-                class={
+                className={
                   "inline-flex items-center py-2 px-4 text-sm font-medium  duration-300 " +
                   (!next
                     ? "text-gray-500 rounded-lg border border-gray-300 bg-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-40"
@@ -213,15 +215,15 @@ function Portfolio() {
               >
                 Next
                 <svg
-                  class="ml-2 w-5 h-5"
+                  className="w-5 h-5 ml-2"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               </button>

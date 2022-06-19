@@ -198,7 +198,7 @@ function About() {
                 <div className="flex flex-col items-start flex-grow pl-6 md:pl-8 sm:flex-row">
                   <div className="inline-flex items-center justify-center flex-shrink-0 w-24 h-24 text-blue-500 bg-blue-100 rounded-full">
                     <img
-                      src="/images/skills.svg"
+                      src="/images/about/skills.svg"
                       alt=""
                       className="w-14 h-14"
                     />
@@ -233,7 +233,7 @@ function About() {
                 <div className="flex flex-col items-start flex-grow pl-6 md:pl-8 sm:items-center sm:flex-row">
                   <div className="inline-flex items-center justify-center flex-shrink-0 w-24 h-24 text-blue-500 bg-blue-100 rounded-full">
                     <img
-                      src="/images/education.svg"
+                      src="/images/about/education.svg"
                       alt=""
                       className="w-14 h-14"
                     />
@@ -256,7 +256,7 @@ function About() {
                 <div className="flex flex-col items-start flex-grow pl-6 md:pl-8 sm:items-center sm:flex-row">
                   <div className="inline-flex items-center justify-center flex-shrink-0 w-24 h-24 text-blue-500 bg-blue-100 rounded-full">
                     <img
-                      src="/images/hoppies.svg"
+                      src="/images/about/hoppies.svg"
                       alt=""
                       className="w-14 h-14"
                     />
@@ -280,7 +280,7 @@ function About() {
                 <div className="flex flex-col items-start flex-grow pl-6 md:pl-8 sm:items-center sm:flex-row">
                   <div className="inline-flex items-center justify-center flex-shrink-0 w-24 h-24 text-blue-500 bg-blue-100 rounded-full">
                     <img
-                      src="/images/experience.svg"
+                      src="/images/about/experience.svg"
                       alt=""
                       className="w-14 h-14"
                     />
