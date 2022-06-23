@@ -149,7 +149,7 @@
   {
     "id": 19,
     "title": "Ayah Bot",
-    "cover": "/images/projects/ayah-bot.png",
+    "cover": "/images/projects/ayah-bot.jpg",
     "githubUrl": "https://github.com/ahmedmohmd/ayah-bot",
     "livePreviewUrl": "https://t.me/random_ayah_bot",
     "category": "backend"
@@ -160,5 +160,13 @@
     "cover": "/images/projects/notes-app.png",
     "githubUrl": "https://github.com/ahmedmohmd/notes-app",
     "category": "backend"
+  },
+  {
+    "id": 21,
+    "title": "Notes App",
+    "cover": "/images/projects/country-finder.png",
+    "githubUrl": "https://github.com/ahmedmohmd/country-finder",
+    "livePreviewUrl": "https://country-finder-five.vercel.app/",
+    "category": "frontend"
   }
 ]
