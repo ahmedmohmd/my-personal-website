@@ -1,4 +1,4 @@
-import { useEffect, useState, useTransition } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import paginate from "../../utilities/paginate";
 import getArticles from "../../services/articlesService";
