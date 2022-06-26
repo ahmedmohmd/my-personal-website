@@ -28,7 +28,7 @@
     "title": "Sound Player",
     "cover": "/images/projects/sound-player.png",
     "githubUrl": "https://github.com/ahmedmohmd/py-player",
-    "livePreviewUrl": "https://py-player.vercel.app/",
+    "livePreviewUrl": "https://sound-player.vercel.app/",
     "category": "frontend"
   },
   {
