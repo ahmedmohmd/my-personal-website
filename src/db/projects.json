@@ -36,7 +36,7 @@
     "title": "Markdown Blog",
     "cover": "/images/projects/markdown-blog.png",
     "githubUrl": "https://github.com/ahmedmohmd/markdown-blog/tree/main",
-    "livePreviewUrl": "https://markdown-blog-orcin.vercel.app/",
+    "livePreviewUrl": "https://markdownblog.vercel.app/",
     "category": "fullstack"
   },
   {
