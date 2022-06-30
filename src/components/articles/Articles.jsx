@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import paginate from "../../utilities/paginate";
+import paginate from "../../utils/paginate";
 import getArticles from "../../services/articlesService";
 import Heading from "../common/Heading";
 
@@ -20,7 +20,7 @@ function Articles() {
       setLoading(true);
 
       const { data } = await getArticles();
-      const { next, previous, result } = paginate(data, page, 9);
+      const { next, previous, result } = paginate(data, page, 6);
       setArticles(result);
       setNext(next);
       setPrev(previous);

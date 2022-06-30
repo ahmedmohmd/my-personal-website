@@ -2,7 +2,7 @@
 import styled from "styled-components";
 import { IoSend } from "react-icons/io5";
 import { useState } from "react";
-import { formValidate } from "../../utilities/formValidate";
+import { formValidate } from "../../utils/formValidate";
 import axios from "axios";
 import Joi from "joi";
 import config from "../../config/config.json";

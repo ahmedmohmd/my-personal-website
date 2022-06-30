@@ -6,7 +6,7 @@ import { GoPrimitiveDot } from "react-icons/go";
 import projects from "../../services/projectService";
 import Heading from "../common/Heading";
 import { useEffect, useState } from "react";
-import paginate from "../../utilities/paginate";
+import paginate from "../../utils/paginate";
 import getProjects from "../../services/projectService";
 
 //* Portfolio Style
