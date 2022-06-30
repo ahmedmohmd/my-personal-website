@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
 import paginate from "../../utils/paginate";
 import getArticles from "../../services/articlesService";
 import Heading from "../common/Heading";
-
-const ArticlesStyle = styled.div``;
 
 function Articles() {
   const [articles, setArticles] = useState([]);
