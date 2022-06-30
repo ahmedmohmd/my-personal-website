@@ -29,7 +29,7 @@ function Articles() {
   }, [page]);
 
   return (
-    <ArticlesStyle className="mx-auto text-gray-600 body-font dark:bg-whale-dark sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div className="mx-auto text-gray-600 body-font dark:bg-whale-dark sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="container px-5 py-16 mx-auto lg:pt-0 lg:pb-16">
         <Heading
           title={"Articles"}
@@ -193,7 +193,7 @@ function Articles() {
           </div>
         )}
       </div>
-    </ArticlesStyle>
+    </div>
   );
 }
 
