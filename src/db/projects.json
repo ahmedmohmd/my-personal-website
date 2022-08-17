@@ -189,5 +189,13 @@
     "githubUrl": "https://github.com/ahmedmohmd/L--Card-Page/tree/main",
     "livePreviewUrl": "https://card-page-iota.vercel.app/",
     "category": "frontend"
+  },
+  {
+    "id": 25,
+    "title": "Modern Landing Page",
+    "cover": "/images/projects/modern-landing-page.png",
+    "githubUrl": "https://github.com/ahmedmohmd/modern-landing-page",
+    "livePreviewUrl": "https://modernlandingpage.vercel.app/",
+    "category": "frontend"
   }
 ]
